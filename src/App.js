@@ -235,7 +235,7 @@ class NameForm extends React.Component {
               </div>
           <input type="submit" value="SEND" className="send" />
         </form>
-        <div class="version"><p>v2.0.0</p></div>
+        <div class="version"><p>v2.0.1</p></div>
         
       </div>
     );
