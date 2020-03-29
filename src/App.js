@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 const regexName = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-const regexDni = /^((?!(0))[0-9]{8})$/;
+const regexDni = /^((?!(0))[0-9]{7,8})$/;
 const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 function App() {
@@ -160,9 +160,10 @@ class NameForm extends React.Component {
               Firstname:
   
           </label>
-          <p className =  {"validation-text " +(this.state.firstnameError === true ? "show" : "not-show")}>Please enter a valid first name</p>
+          
           </div>
-          <div className="col-75">
+          <div className="col-75 tooltip">
+            <span className =  {"tooltiptext " +(this.state.firstnameError === true ? "show" : "not-show")}>Please enter a valid first name</span>
             <input
               name="firstname"
               className={(this.state.firstnameError === true ? "invalid" : "valid")}
@@ -178,9 +179,10 @@ class NameForm extends React.Component {
             Lastname:
           
           </label>
-          <p className =  {"validation-text " +(this.state.lastnameError === true ? "show" : "not-show")}>Please enter a valid last name</p>
+          
           </div>
-          <div className="col-75">
+          <div className="col-75 tooltip">
+          <span className =  {"tooltiptext " +(this.state.lastnameError === true ? "show" : "not-show")}>Please enter a valid last name</span>
           <input
               name="lastname"
               className={(this.state.lastnameError === true ? "invalid" : "valid")}
@@ -197,9 +199,10 @@ class NameForm extends React.Component {
             DNI:
           
           </label>
-    <p className =  {"validation-text " +(this.state.dniError === true ? "show" : "not-show")}>{8-this.state.dni.length} digits left</p>
           </div>
-          <div className="col-75">
+          <div className="col-75 tooltip">
+
+          <span className =  {"tooltiptext " +(this.state.dniError === true ? "show" : "not-show")}>Please enter a valid DNI</span>
           <input
               name="dni"
               className={(this.state.dniError === true ? "invalid" : "valid")}
@@ -207,6 +210,7 @@ class NameForm extends React.Component {
               value={this.state.dni}
               placeholder="66555444"
               onChange={this.handleInputChange} />
+            
               </div>
               </div>
               <div className="row">
@@ -215,9 +219,11 @@ class NameForm extends React.Component {
             Email:
           
           </label>
-          <p className =  {"validation-text " +(this.state.emailError === true ? "show" : "not-show")}>Please enter a valid email</p>
+
+          
           </div>
-          <div className="col-75">
+          <div className="col-75 tooltip">
+          <span className =  {"tooltiptext " +(this.state.emailError === true ? "show" : "not-show")}>Please enter a valid email</span>
           <input
               name="email"
               className={(this.state.emailError === true ? "invalid" : "valid")}
