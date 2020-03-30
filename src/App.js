@@ -1,31 +1,79 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+//start router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
+
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <NavLink
+                exact
+                to="/" 
+                activeClassName="active"
+              > Home
+              </NavLink>
+              
+            
+            </li>
+            
+            <li>
+              <NavLink to="/signup" activeClassName="active">Sign up</NavLink>
+            </li>
+            <li>
+              <NavLink to="/users" activeClassName="active">Users</NavLink>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+        <Route exact path="/" >
+          <Home />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+         
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return   <h2>Home</h2>;
+}
+
+function Signup() {
+  return <NameForm />;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
+
+
+//Finish router
 
 const regexName = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
 const regexDni = /^((?!(0))[0-9]{7,8})$/;
 const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
 class NameForm extends React.Component {
   constructor(props) {
@@ -244,4 +292,4 @@ class NameForm extends React.Component {
 
 
 
-export default NameForm;
+export default App;

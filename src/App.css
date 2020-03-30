@@ -24,18 +24,13 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.active{
+  color: purple;
+  font-size: 105%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
 
 .invalid{
   color: black;
@@ -107,6 +102,22 @@ input[type=text], input[type=number],input[type=email], select, textarea{
   justify-content: center;
   align-items: center;
 }
+nav ul{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+  text-decoration: none;
+  width: 350px;
+}
+
+nav ul a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: gray;
+}
+
+
 p{
   margin-top: 10px;
   margin-right: 0;
@@ -129,7 +140,7 @@ p{
 }
 #header img{
   height: 50px;
-  padding: 20px;
+  padding: 10px;
 }
 .version{
   text-align: center;
