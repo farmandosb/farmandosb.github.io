@@ -56,7 +56,7 @@ function App() {
 }
 
 function Home() {
-  return   <h2>Home</h2>;
+  return  <div class="titulo"><h2>Home</h2></div> ;
 }
 
 function Signup() {
@@ -64,7 +64,7 @@ function Signup() {
 }
 
 function Users() {
-  return <h2>Users</h2>;
+  return <div class="titulo"><h2>Users</h2></div>;
 }
 
 
