@@ -13,7 +13,8 @@ import {
 function App() {
   return (
     <Router>
-      <div>
+      <div  id="header">
+        <div><image src="%PUBLIC_URL%/fs192.png"></image> </div>
         <nav>
           <ul>
             <li>
