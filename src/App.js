@@ -86,6 +86,7 @@ let userArr;
 function manipularJson(json){
   let divUser = document.querySelector("#userList");
   let ulUser = document.createElement("ul");
+  ulUser.className= "user-list";
   json.forEach(element => {
     userArr = Array(json.length).fill(element.firstname);
     console.log(element.firstName);
@@ -118,8 +119,7 @@ function Users() {
           onClick={handleClick}>
           Load
         </button>
-        <ul id="userList"
-        className="user-list"></ul>
+        <div id="userList"></div>
             
         
     </div>
