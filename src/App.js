@@ -1,7 +1,10 @@
-import React from 'react';
+//imports for ReactJS
+import React, { useCallback } from 'react';
+
+//import styles
 import './App.css';
 
-//start router
+//imports for  router
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,11 +13,14 @@ import {
 } from "react-router-dom";
 
 
+
+
+
 function App() {
   return (
     <Router>
       <div  id="header">
-        <div><image src="%PUBLIC_URL%/fs192.png"></image> </div>
+        <div><img src="my-app2/fs192.png"></img> </div>
         <nav>
           <ul>
             <li>
@@ -64,9 +70,67 @@ function Signup() {
   return <NameForm />;
 }
 
-function Users() {
-  return <div class="titulo"><h2>Users</h2></div>;
+
+function fetchData() {
+  
+  fetch('https://reactpostgresql.herokuapp.com/' + 'findall')
+      .then(response => response.json())
+      .then(json => manipularJson(json))
+  
+
 }
+
+let userArr;
+
+
+function manipularJson(json){
+  let divUser = document.querySelector("#userList");
+  let ulUser = document.createElement("ul");
+  json.forEach(element => {
+    userArr = Array(json.length).fill(element.firstname);
+    console.log(element.firstName);
+    let liUser = document.createElement("li");
+    liUser.textContent = element.firstName;
+    ulUser.appendChild(liUser);
+  });
+  divUser.appendChild(ulUser)
+  
+  
+}
+
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li>{number}</li>
+);
+
+
+
+
+function handleClick(){
+  fetchData();
+  
+ }
+
+function Users() {
+  return (
+    <div className="titulo">
+        <button id="load"
+          onClick={handleClick}>
+          Load
+        </button>
+        <ul id="userList"
+        className="user-list"></ul>
+            
+        
+    </div>
+  
+  );  
+} 
+
+
+
+
+
 
 
 //Finish router
