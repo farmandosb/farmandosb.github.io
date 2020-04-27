@@ -15,7 +15,7 @@ import {
 //imports for using Tabla component
 import Tabla from './Components/Tabla';
 
-//imports for using NameForm component
+import Principal from './Components/Home'
 import NameForm from './Components/Nameform'
 
 //imports for using NameForm component
@@ -95,6 +95,8 @@ function App() {
 
         </Switch>
       </div>
+      <div id="footer"> <small>&copy; Copyright 2020, <a href="">Freddy Suárez</a><span>&#124;</span><a href="https://www.linkedin.com/in/freddy-armando-suarez/" target="_blank">HIRE</a></small></div>
+      
     </Router>
 
 
@@ -102,7 +104,7 @@ function App() {
 }
 
 function Home() {
-  return <h1>Home</h1>;
+  return <Principal />;
 }
 
 function Signup() {
