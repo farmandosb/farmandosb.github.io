@@ -149,8 +149,8 @@ function Users() {
 function Movies() {
   return (
     <div class="movies">
-      <h2> Movies from Cinecalidad and The Movie Data Base</h2>
-      <p>Here you'll find some good movies that I have watched recently!.</p>
+      <h2 class="intro-movie"> Movies from Cinecalidad and The Movie Data Base</h2>
+      <p class="intro-movie">Here you'll find some good movies that I have watched recently!.</p>
 
       <Peliculas
         moviecustomID="443791"
