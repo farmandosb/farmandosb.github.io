@@ -1,25 +1,13 @@
 {
-  "short_name": "My-app2",
-  "name": "my-app2",
+  "short_name": "portfolio-react",
+  "name": "portfolio-react",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "fs192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "fs512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "fs32.png",
+      "sizes": "32x32",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "display": "standalone"
 }

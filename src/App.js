@@ -1,5 +1,5 @@
 //imports for ReactJS
-import React, { useCallback } from 'react';
+import React, { } from 'react';
 
 //import styles
 import './App.css';
@@ -12,190 +12,76 @@ import {
   NavLink
 } from "react-router-dom";
 
-//imports for using Tabla component
-import Tabla from './Components/Tabla';
-
-import Principal from './Components/Home'
-import NameForm from './Components/Nameform'
-
-//imports for using NameForm component
-import Peliculas from './Components/Movies'
-
+import Java from "./Components/Java"
+import Javascript from "./Components/Javascript"
 
 function App() {
   return (
     <Router>
-      <div id="header">
-        <div><img id="fslogo" src="my-app2/fs192.png"></img> </div>
-        <nav>
-          <ul>
-            <li>
-              <NavLink
-                exact
-                to="/"
-                activeClassName="active"
-              > Home
+      <nav id="nav">
+        <ul>
+          <li>
+            <NavLink
+              exact
+              to="/"
+              activeClassName="active"
+            > Java
               </NavLink>
 
 
-            </li>
+          </li>
 
-            <li>
-              <NavLink to="/signup" activeClassName="active">Sign up</NavLink>
-            </li>
-            <li>
-              <NavLink to="/users" activeClassName="active">Users</NavLink>
-            </li>
-            <li>
-              <NavLink to="/movies" activeClassName="active">Movies</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
+          <li>
+            <NavLink to="/javascript" activeClassName="active">Javascript</NavLink>
+          </li>
+
+        </ul>
+      </nav>
+
       <div id="main">
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/" >
-            <Home />
+            <Principal />
           </Route>
-          <Route path="/signup">
-            <Signup />
+          <Route path="/javascript">
+            <Secundario />
           </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/movies">
-            <Movies moviecustomID="hola" />
-            <div
-              className="movies-footer"
-            >
-              <a
-                href="https://www.themoviedb.org/?language=es"
-                target="_blank"
-              >
-                <img
-                  src="my-app2/tmdb_logo.png"
-                >
-                </img>
-              </a>
-              <a
-                href="https://www.cinecalidad.is/"
-                target="_blank"
-              >
-                <img
-                  src="my-app2/cc_logo.png"
-                >
-                </img>
-              </a>
 
-
-            </div>
-          </Route>
 
         </Switch>
       </div>
-      <div id="footer"> <small>&copy; Copyright 2020, <a href="">Freddy Suárez</a><span>&#124;</span><a href="https://www.linkedin.com/in/freddy-armando-suarez/" target="_blank">HIRE</a></small></div>
-      
+      <div id="footer"> <small>&copy; Copyright 2020, <a href="">Freddy Suárez</a><span>&#124;</span><a href="https://www.linkedin.com/in/freddy-armando-suarez/" target="_blank" rel="noopener noreferrer">HIRE</a></small></div>
+
     </Router>
 
 
   );
 }
 
-function Home() {
-  return <Principal />;
+function Principal() {
+  return <Java />;
 }
 
-function Signup() {
-  return <NameForm />;
+function Secundario() {
+  return <Javascript />;
 }
-
-/*function manipularJson(json){
-  let divUser = document.querySelector("#userList");
-  let ulUser = document.createElement("ul");
-  ulUser.className= "user-list";
-  json.forEach(element => {
-    userArr = Array(json.length).fill(element.firstname);
-    console.log(element.firstName);
-    let liUser = document.createElement("li");
-    liUser.textContent = element.firstName;
-    ulUser.appendChild(liUser);
-  });
-  divUser.appendChild(ulUser);
-
-}*/
-let employeesJSON;
-function handleClick() {
-  fetch('https://reactpostgresql.herokuapp.com/' + 'findall')
-    .then(response => {
-      employeesJSON = response.json();
-    })
-}
-
-
-
-function Users() {
-  return (
-    <div className="titulo">
-      <div id="userList">
-        <Tabla />
-      </div>
-
-
-    </div>
-
-  );
-}
-
-function Movies() {
-  return (
-    <div class="movies">
-      <h2 class="intro-movie"> Movies from Cinecalidad and The Movie Data Base</h2>
-      <p class="intro-movie">Here you'll find some good movies that I have watched recently!.</p>
-
-      <Peliculas
-        moviecustomID="443791"
-        moviecustomLink="https://www.cinecalidad.is/pelicula/amenaza-en-lo-profundo-2020-online-descarga/"
-      />
-      <Peliculas
-        moviecustomID="522162"
-        moviecustomLink="https://www.cinecalidad.is/pelicula/midway-batalla-en-el-pacifico-2019-online-descarga/"
-      />
-      <Peliculas
-        moviecustomID="512200"
-        moviecustomLink="https://www.cinecalidad.is/pelicula/jumanji-el-siguiente-nivel-2019-online-descarga/"
-      />
-      <Peliculas
-        moviecustomID="492188"
-        moviecustomLink="https://www.cinecalidad.is/pelicula/historia-de-un-matrimonio-2019-online-descarga/"
-      />
-      <Peliculas
-        moviecustomID="419704"
-        moviecustomLink="https://www.cinecalidad.is/pelicula/ad-astra-hacia-las-estrellas-2019-online-descarga/"
-      />
-      <Peliculas
-        moviecustomID="399579"
-        moviecustomLink="https://www.cinecalidad.is/pelicula/battle-angel-la-ultima-guerrera-2019-online-descarga/"
-      />
-      <Peliculas
-        moviecustomID="568091"
-        moviecustomLink="https://www.cinecalidad.is/pelicula/fractura-2019-online-descarga/"
-      />
-
-    </div>
-
-  )
-}
-
-
-
-
-
 
 
 
 //Finish router
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const rows = document.querySelectorAll("tr[data-href]");
+  rows.forEach(row => {
+    row.addEventListener("click", () => {
+      window.location.href = row.dataset.href;
+    });
+  });
+
+})
 
 
 
