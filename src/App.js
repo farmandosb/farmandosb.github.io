@@ -52,7 +52,7 @@ function App() {
 
         </Switch>
       </div>
-      <div id="footer"> <small>&copy; Copyright 2020, <a href="">Freddy Suárez</a><span>&#124;</span><a href="https://www.linkedin.com/in/freddy-armando-suarez/" target="_blank" rel="noopener noreferrer">HIRE</a></small></div>
+      <div id="footer"> <small>Created by<span></span><a href="https://www.linkedin.com/in/freddy-armando-suarez/" target="_blank" rel="noopener noreferrer">FREDDY SUÁREZ</a></small></div>
 
     </Router>
 
