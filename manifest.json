@@ -1,0 +1,13 @@
+{
+  "short_name": "portfolio-react",
+  "name": "portfolio-react",
+  "icons": [
+    {
+      "src": "fs32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}
