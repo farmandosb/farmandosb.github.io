@@ -338,7 +338,7 @@ table {
     text-align: left;
   }
   tr:hover {background-color: #ddd;}
-  tr[data-href]{
+  tr{
     cursor: pointer;
   }
 

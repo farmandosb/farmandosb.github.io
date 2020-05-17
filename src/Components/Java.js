@@ -3,12 +3,11 @@ import React, { } from 'react';
 
 
 class Java extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
+    handleClick(projectUrl) {
+        window.open(projectUrl);
     }
-
     render() {
+
         return (
             <div className="main">
                 <table className="proyectos">
@@ -19,9 +18,12 @@ class Java extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-href="https://farmandosb.github.io/g19" target="_blank" rel="noopener noreferrer">
-                            <td className="td-proyectos" ><a className="vinculos" href="https://farmandosb.github.io/g19">API rest</a>
-                            </td>
+                        <tr
+                            onClick={() => this.handleClick("https://farmandosb.github.io/g19")}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <td className="td-proyectos" >API rest</td>
                             <td>SpringBoot</td>
                         </tr>
                     </tbody>

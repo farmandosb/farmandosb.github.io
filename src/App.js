@@ -16,6 +16,7 @@ import Java from "./Components/Java"
 import Javascript from "./Components/Javascript"
 
 function App() {
+  
   return (
     <Router>
       <nav id="nav">
@@ -52,7 +53,7 @@ function App() {
 
         </Switch>
       </div>
-      <div id="footer"> <small>Created by<span></span><a href="https://www.linkedin.com/in/freddy-armando-suarez/" target="_blank" rel="noopener noreferrer">FREDDY SUÁREZ</a></small></div>
+      <div id="footer"> <small>Created by<span></span><a href="https://www.linkedin.com/in/freddy-armando-suarez/" target="_blank" rel="noopener noreferrer">FREDDY SUÁREZ</a></small> <span><small>2020</small></span></div>
 
     </Router>
 
@@ -61,6 +62,7 @@ function App() {
 }
 
 function Principal() {
+  
   return <Java />;
 }
 
@@ -73,15 +75,6 @@ function Secundario() {
 //Finish router
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll("tr[data-href]");
-  rows.forEach(row => {
-    row.addEventListener("click", () => {
-      window.location.href = row.dataset.href;
-    });
-  });
-
-})
 
 
 
